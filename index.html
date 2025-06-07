@@ -1,240 +1,200 @@
+<!-- ✨ EditSphere: Premium Video Editing Website ✨ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EditSphere - Your Video Editing Partner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>EditSphere - Pro Video Edits</title>
+
+  <!-- Fonts & AOS Animations -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-      color: #333;
+      margin: 0;
+      background: #fefefe;
+      color: #222;
     }
     header {
-      background-color: #ffffffcc;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #ff416c;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #444;
-      font-weight: 500;
-    }
-    .hero {
+      background: linear-gradient(to right, #ff4d4d, #ff0066);
+      color: white;
       text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(180deg, #ffffffaa, #ffffff00);
+      padding: 60px 20px;
+      position: relative;
     }
-    .hero h1 {
+    header h1 {
       font-size: 48px;
-      color: #ff416c;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease-out;
     }
-    .hero p {
+    header p {
+      font-size: 18px;
+      margin: 0;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .pricing-table {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .pricing-table h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .price-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 280px;
+      transition: transform 0.3s;
+    }
+    .price-card:hover {
+      transform: translateY(-10px);
+    }
+    .price-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .price-card p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .order-btn-container {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .order-btn {
+      padding: 16px 32px;
       font-size: 20px;
-      margin: 20px 0;
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff4d4d, #ff0066);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 0, 100, 0.3);
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
     }
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 50px 20px;
-      background-color: #fff8f0;
+    .order-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(255, 0, 100, 0.5);
     }
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+    @keyframes slideUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .review-section {
+      padding: 60px 20px;
+      background: #fdfdfd;
+    }
+    .review-section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .review-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .review-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 24px;
+      max-width: 300px;
+      text-align: center;
       transition: transform 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
+    .review-card:hover {
+      transform: translateY(-6px);
     }
-    .card h3 {
-      color: #ff416c;
+    .review-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
     }
-    .form-section {
-      padding: 50px 20px;
-      background: #ffe3e3;
-    }
-    form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
-    input, select, textarea {
-      margin-bottom: 20px;
-      padding: 15px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    button {
-      padding: 15px;
-      border: none;
-      border-radius: 8px;
-      background-color: #ff416c;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background-color: #e73355;
-    }
-    footer {
-      background: #2f2f2f;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .prices {
-      padding: 50px 20px;
-      background: #fff;
-    }
-    .price-table {
-      max-width: 800px;
-      margin: auto;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    .price-table th, .price-table td {
-      border: 1px solid #ddd;
-      padding: 15px;
-    }
-    .price-table th {
-      background-color: #ffcad4;
+    .stars {
+      color: #f39c12;
+      font-size: 20px;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">EditSphere</div>
-    <nav>
-      <a href="#categories">Categories</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#form">Register</a>
-      <a href="#policy">Policy</a>
-    </nav>
+    <h1>EditSphere</h1>
+    <p>Your Video, Professionally Edited</p>
   </header>
 
-  <section class="hero">
-    <h1>Premium Video Editing at Minimal Prices</h1>
-    <p>From reels to full YouTube productions – EditSphere makes your videos shine!</p>
-  </section>
-
-  <section id="categories" class="categories">
-    <div class="card">
-      <h3>Travel Video Edit</h3>
-      <p>Beautiful transitions, color grading and background music to enhance your travel memories.</p>
-    </div>
-    <div class="card">
-      <h3>Instagram Reel Edit</h3>
-      <p>Quick, trendy, engaging edits perfect for viral content.</p>
-    </div>
-    <div class="card">
-      <h3>Long-Form YouTube Edit</h3>
-      <p>Professional editing for YouTubers, vloggers, and creators with detail and flair.</p>
-    </div>
-    <div class="card">
-      <h3>Shorts / TikTok Edit</h3>
-      <p>Fast-paced edits with effects, text animations, and beat syncs.</p>
-    </div>
-    <div class="card">
-      <h3>Personal Moments Edit</h3>
-      <p>Make birthdays, weddings, or personal videos cinematic and emotional.</p>
+  <section class="pricing-table" data-aos="fade-up">
+    <h2>💼 Our Editing Plans</h2>
+    <div class="pricing-grid">
+      <div class="price-card" data-aos="zoom-in"> <h3>Travel Edit</h3><p>₹199 - ₹399</p> </div>
+      <div class="price-card" data-aos="zoom-in" data-aos-delay="100"> <h3>Reel Edit</h3><p>₹299</p> </div>
+      <div class="price-card" data-aos="zoom-in" data-aos-delay="200"> <h3>Long Form (YouTube)</h3><p>₹599 - ₹899</p> </div>
+      <div class="price-card" data-aos="zoom-in" data-aos-delay="300"> <h3>Personal Edit</h3><p>₹399 - ₹999</p> </div>
     </div>
   </section>
 
-  <section id="pricing" class="prices">
-    <h2 style="text-align:center; color:#ff416c;">Pricing Table</h2>
-    <table class="price-table">
-      <tr><th>Category</th><th>Basic Price</th><th>Pro Price</th></tr>
-      <tr><td>Travel Video Edit</td><td>₹199</td><td>₹399</td></tr>
-      <tr><td>Instagram Reels</td><td>₹399</td><td>₹799</td></tr>
-      <tr><td>YouTube Video</td><td>₹899</td><td>₹1199</td></tr>
-      <tr><td>Shorts/TikTok</td><td>₹399</td><td>₹899</td></tr>
-      <tr><td>Personal Video</td><td>₹499</td><td>₹999</td></tr>
-    </table>
-    <!-- Place Your Order Button (Centered, Animated, Styled) -->
-<div style="text-align: center; margin-top: 60px;">
-  <a href="https://forms.gle/Zr1tDXNMCiKjskBXA" target="_blank" style="text-decoration: none;">
-    <button class="order-btn">
-      📥 Place Your Order
-    </button>
-  </a>
-</div>
+  <div class="order-btn-container">
+    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">
+      <button class="order-btn">📥 Place Your Order</button>
+    </a>
+  </div>
 
-<!-- Styling for the button -->
-<style>
-  .order-btn {
-    padding: 16px 32px;
-    font-size: 20px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #ff4d4d, #ff0066);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(255, 0, 100, 0.3);
-    animation: slideUp 1s ease forwards;
-    opacity: 0;
-  }
-
-  .order-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(255, 0, 100, 0.5);
-  }
-
-  @keyframes slideUp {
-    0% {
-      transform: translateY(40px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-  }
-</style>
-</a>
+  <section class="review-section">
+    <h2 data-aos="fade-up">💬 What Our Clients Say</h2>
+    <div class="review-grid">
+      <div class="review-card" data-aos="fade-up">
+        <img src="https://i.pravatar.cc/100?img=5" class="review-img">
+        <h3>Ritika Sharma</h3>
+        <p>🔥 “They edited my travel vlog and it looked straight out of a Bollywood movie!”</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://i.pravatar.cc/100?img=32" class="review-img">
+        <h3>Aryan Mehta</h3>
+        <p>🎥 “I gave raw footage and got a YouTube-ready video in 2 days. Loved it!”</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://i.pravatar.cc/100?img=12" class="review-img">
+        <h3>Simran Gill</h3>
+        <p>📱 “Perfect edit for my birthday reel! Super fast and affordable.”</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
   </section>
 
-  <section id="form" class="form-section">
-    <h2 style="text-align:center; color:#ff416c;">Register to Get Your Video Edited</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Contact Number" required>
-      <select required>
-        <option value="">Select Edit Type</option>
-        <option>Travel Edit</option>
-        <option>Reel Edit</option>
-        <option>YouTube Video</option>
-        <option>Shorts Edit</option>
-        <option>Personal Edit</option>
-      </select>
-      <input type="file" required>
-      <textarea placeholder="Any instructions or preferences"></textarea>
-      <button type="submit">Submit & Pay</button>
-    </form>
-  </section>
-
-  <footer id="policy">
-    <p><strong>Terms & Conditions:</strong> By submitting, you agree to allow EditSphere to process your content strictly for editing purposes. No refunds once editing begins. Delivery time varies by project type. Contact support on Instagram @editsphere.in</p>
-    <p>© 2025 EditSphere. All rights reserved.</p>
-  </footer>
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
