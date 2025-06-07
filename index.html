@@ -14,7 +14,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #fff;
+      background: linear-gradient(to bottom right, #fff5f5, #ffe6f0);
       color: #222;
       font-size: 18px;
     }
@@ -22,76 +22,74 @@
       background: linear-gradient(to right, #ff4d4d, #ff0066);
       color: white;
       text-align: center;
-      padding: 100px 20px 60px;
+      padding: 120px 20px 80px;
     }
     header h1 {
-      font-size: 60px;
-      margin-bottom: 15px;
+      font-size: 72px;
+      margin-bottom: 20px;
     }
     header p {
-      font-size: 24px;
-      margin: 0;
+      font-size: 26px;
+      margin: 0 auto;
+      max-width: 800px;
     }
 
-    .pricing-table {
-      padding: 80px 40px;
+    .section {
+      padding: 100px 40px;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 22px;
+      max-width: 1000px;
+      margin: auto;
+      margin-top: 40px;
+      color: #333;
+    }
+
+    .pricing-table h2 {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+    table {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      border-collapse: collapse;
+      font-size: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 16px;
       text-align: center;
     }
-    .pricing-table h2 {
-      font-size: 48px;
-      margin-bottom: 40px;
-    }
-    .pricing-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .price-card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      padding: 40px;
-      max-width: 320px;
-      transition: transform 0.3s;
-    }
-    .price-card:hover {
-      transform: translateY(-10px);
-    }
-    .price-card h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-    .price-card p {
-      font-size: 20px;
-      color: #444;
+    th {
+      background-color: #ff0066;
+      color: white;
     }
 
     .order-btn-container {
       text-align: center;
-      margin-top: 80px;
+      margin: 80px 0;
     }
     .order-btn {
-      padding: 18px 36px;
-      font-size: 22px;
+      padding: 20px 40px;
+      font-size: 24px;
       font-weight: 600;
       background: linear-gradient(135deg, #ff4d4d, #ff0066);
       color: white;
       border: none;
-      border-radius: 14px;
+      border-radius: 16px;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 6px 20px rgba(255, 0, 100, 0.3);
+      box-shadow: 0 8px 24px rgba(255, 0, 100, 0.3);
     }
     .order-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(255, 0, 100, 0.4);
+      box-shadow: 0 10px 30px rgba(255, 0, 100, 0.4);
     }
 
-    .review-section {
-      padding: 80px 40px;
-      background: #f9f9f9;
-    }
     .review-section h2 {
       text-align: center;
       font-size: 44px;
@@ -125,14 +123,14 @@
     }
 
     .policy {
-      padding: 60px 30px;
+      padding: 80px 40px;
       background: #fff;
       color: #444;
     }
     .policy h2 {
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 42px;
+      margin-bottom: 30px;
     }
     .policy p {
       max-width: 900px;
@@ -146,53 +144,73 @@
 
   <header>
     <h1>EditSphere</h1>
-    <p>Premium Video Editing Service for Creators, Influencers, and You 🎥</p>
+    <p>Welcome to EditSphere - India's Premium Video Editing Platform for creators, influencers, travellers & individuals. We turn your raw clips into cinematic art.</p>
   </header>
 
-  <section class="pricing-table">
-    <h2>Our Video Editing Plans</h2>
-    <div class="pricing-grid">
-      <div class="price-card"> <h3>Travel Edit</h3><p>₹100 - ₹200</p> </div>
-      <div class="price-card"> <h3>Reel Edit</h3><p>₹150</p> </div>
-      <div class="price-card"> <h3>YouTube Long Form</h3><p>₹350 - ₹500</p> </div>
-      <div class="price-card"> <h3>Personal Edit</h3><p>₹150 - ₹250</p> </div>
-    </div>
+  <section class="section description">
+    <p>We specialize in editing travel vlogs, reels, YouTube videos, personal moments, weddings, and everything in between. With affordable pricing, lightning-fast delivery, and pro-level visuals — EditSphere is your all-in-one editing studio 🎬</p>
+  </section>
+
+  <section class="section pricing-table">
+    <h2>Pricing Table</h2>
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Price (INR)</th>
+      </tr>
+      <tr>
+        <td>Travel Edit</td>
+        <td>₹199 - ₹399</td>
+      </tr>
+      <tr>
+        <td>Reel Edit</td>
+        <td>₹299 - ₹499</td>
+      </tr>
+      <tr>
+        <td>YouTube Long Form</td>
+        <td>₹599 - ₹999</td>
+      </tr>
+      <tr>
+        <td>Personal Edit</td>
+        <td>₹299 - ₹599</td>
+      </tr>
+    </table>
   </section>
 
   <div class="order-btn-container">
-    <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">
+    <a href="https://forms.gle/Zr1tDXNMCiKjskBXA" target="_blank">
       <button class="order-btn">📥 Place Your Order</button>
     </a>
   </div>
 
-  <section class="review-section">
-    <h2>Client Feedback ❤️</h2>
+  <section class="section review-section">
+    <h2>Client Testimonials</h2>
     <div class="review-grid">
       <div class="review-card">
         <img src="https://i.ibb.co/K59jbtd/indian-girl.jpg" class="review-img">
         <h3>Anjali Verma</h3>
-        <p>“I wanted my Goa trip edited into a cinematic video. EditSphere made it look like a music video!🔥”</p>
+        <p>“I got my travel video edited within a day, and it looked like a professional documentary! EditSphere nailed it.”</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
       </div>
       <div class="review-card">
         <img src="https://i.ibb.co/zQX5cGZ/indian-boy.jpg" class="review-img">
-        <h3>Rohit Sinha</h3>
-        <p>“My vlog went from plain to pro. Fast delivery and cool effects. Recommend to all YouTubers.”</p>
+        <h3>Rohit Yadav</h3>
+        <p>“My YouTube long-form video turned out like a movie trailer. They even added subtitles & transitions. Highly recommended!”</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
       </div>
       <div class="review-card">
         <img src="https://i.ibb.co/s5RRpnJ/indian-lady.jpg" class="review-img">
-        <h3>Priya Malhotra</h3>
-        <p>“They edited my wedding reel beautifully. I was literally emotional watching it.”</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <h3>Priya</h3>
+        <p>“I wanted my anniversary video edited emotionally. They added the perfect music and slow-mos. Loved it ❤️”</p>
+        <div class="stars">⭐⭐⭐⭐</div>
       </div>
     </div>
   </section>
 
-  <section class="policy">
+  <section class="section policy">
     <h2>Terms & Conditions</h2>
     <p>
-      EditSphere reserves the right to reject any inappropriate content. All content submitted must be owned by the client. Delivery time is typically 1–3 working days based on complexity. Refunds are not issued after work is completed. Pricing is subject to change. Client agrees to allow EditSphere to use final edits for portfolio or promotional purposes unless otherwise requested.
+      By placing an order on EditSphere, clients agree to provide original content for editing. No copyrighted or harmful content is allowed. Typical delivery is within 2–4 working days based on complexity. Once editing is completed and delivered, no refunds are provided. You grant EditSphere permission to showcase edits (unless you request otherwise). Prices may vary based on custom requirements. Contact us for bulk or brand-based editing deals.
     </p>
   </section>
 
