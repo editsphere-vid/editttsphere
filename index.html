@@ -167,11 +167,49 @@
       <tr><td>YouTube Video</td><td>₹899</td><td>₹1199</td></tr>
       <tr><td>Shorts/TikTok</td><td>₹399</td><td>₹899</td></tr>
       <tr><td>Personal Video</td><td>₹499</td><td>₹999</td></tr>
-      <a href="https://forms.gle/Zr1tDXNMCiKjskBXA" target="_blank">
-  <button style="padding: 14px 28px; background-color: #ff4d4d; color: white; border: none; border-radius: 10px; font-size: 18px; cursor: pointer;">
-    📥 Place Your Order
-  </button>
     </table>
+    <!-- Place Your Order Button (Centered, Animated, Styled) -->
+<div style="text-align: center; margin-top: 60px;">
+  <a href="https://forms.gle/Zr1tDXNMCiKjskBXA" target="_blank" style="text-decoration: none;">
+    <button class="order-btn">
+      📥 Place Your Order
+    </button>
+  </a>
+</div>
+
+<!-- Styling for the button -->
+<style>
+  .order-btn {
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff4d4d, #ff0066);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 0, 100, 0.3);
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  .order-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 0, 100, 0.5);
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+</style>
 </a>
   </section>
 
