@@ -14,135 +14,131 @@
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #fefefe;
+      background: #fff;
       color: #222;
+      font-size: 18px;
     }
     header {
       background: linear-gradient(to right, #ff4d4d, #ff0066);
       color: white;
       text-align: center;
-      padding: 60px 20px;
-      position: relative;
+      padding: 100px 20px 60px;
     }
     header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      animation: fadeInDown 1s ease-out;
+      font-size: 60px;
+      margin-bottom: 15px;
     }
     header p {
-      font-size: 18px;
+      font-size: 24px;
       margin: 0;
-      animation: fadeInUp 1s ease-out;
     }
 
     .pricing-table {
-      padding: 60px 20px;
+      padding: 80px 40px;
       text-align: center;
     }
     .pricing-table h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
+      font-size: 48px;
+      margin-bottom: 40px;
     }
     .pricing-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
     }
     .price-card {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      padding: 30px;
-      max-width: 280px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px;
+      max-width: 320px;
       transition: transform 0.3s;
     }
     .price-card:hover {
       transform: translateY(-10px);
     }
     .price-card h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 28px;
+      margin-bottom: 15px;
     }
     .price-card p {
-      font-size: 18px;
+      font-size: 20px;
       color: #444;
     }
 
     .order-btn-container {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 80px;
     }
     .order-btn {
-      padding: 16px 32px;
-      font-size: 20px;
+      padding: 18px 36px;
+      font-size: 22px;
       font-weight: 600;
       background: linear-gradient(135deg, #ff4d4d, #ff0066);
       color: white;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 12px rgba(255, 0, 100, 0.3);
-      animation: slideUp 1s ease forwards;
-      opacity: 0;
+      box-shadow: 0 6px 20px rgba(255, 0, 100, 0.3);
     }
     .order-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(255, 0, 100, 0.5);
-    }
-
-    @keyframes slideUp {
-      0% { transform: translateY(40px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      box-shadow: 0 8px 24px rgba(255, 0, 100, 0.4);
     }
 
     .review-section {
-      padding: 60px 20px;
-      background: #fdfdfd;
+      padding: 80px 40px;
+      background: #f9f9f9;
     }
     .review-section h2 {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
+      font-size: 44px;
+      margin-bottom: 50px;
     }
     .review-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
     }
     .review-card {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      padding: 24px;
-      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 30px;
+      max-width: 320px;
       text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .review-card:hover {
-      transform: translateY(-6px);
     }
     .review-img {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .stars {
       color: #f39c12;
-      font-size: 20px;
-      margin-top: 8px;
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    .policy {
+      padding: 60px 30px;
+      background: #fff;
+      color: #444;
+    }
+    .policy h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .policy p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -150,16 +146,16 @@
 
   <header>
     <h1>EditSphere</h1>
-    <p>Your Video, Professionally Edited</p>
+    <p>Premium Video Editing Service for Creators, Influencers, and You 🎥</p>
   </header>
 
-  <section class="pricing-table" data-aos="fade-up">
-    <h2>💼 Our Editing Plans</h2>
+  <section class="pricing-table">
+    <h2>Our Video Editing Plans</h2>
     <div class="pricing-grid">
-      <div class="price-card" data-aos="zoom-in"> <h3>Travel Edit</h3><p>₹199 - ₹399</p> </div>
-      <div class="price-card" data-aos="zoom-in" data-aos-delay="100"> <h3>Reel Edit</h3><p>₹299</p> </div>
-      <div class="price-card" data-aos="zoom-in" data-aos-delay="200"> <h3>Long Form (YouTube)</h3><p>₹599 - ₹899</p> </div>
-      <div class="price-card" data-aos="zoom-in" data-aos-delay="300"> <h3>Personal Edit</h3><p>₹399 - ₹999</p> </div>
+      <div class="price-card"> <h3>Travel Edit</h3><p>₹100 - ₹200</p> </div>
+      <div class="price-card"> <h3>Reel Edit</h3><p>₹150</p> </div>
+      <div class="price-card"> <h3>YouTube Long Form</h3><p>₹350 - ₹500</p> </div>
+      <div class="price-card"> <h3>Personal Edit</h3><p>₹150 - ₹250</p> </div>
     </div>
   </section>
 
@@ -170,27 +166,34 @@
   </div>
 
   <section class="review-section">
-    <h2 data-aos="fade-up">💬 What Our Clients Say</h2>
+    <h2>Client Feedback ❤️</h2>
     <div class="review-grid">
-      <div class="review-card" data-aos="fade-up">
-        <img src="https://i.pravatar.cc/100?img=5" class="review-img">
-        <h3>Ritika Sharma</h3>
-        <p>🔥 “They edited my travel vlog and it looked straight out of a Bollywood movie!”</p>
+      <div class="review-card">
+        <img src="https://i.ibb.co/K59jbtd/indian-girl.jpg" class="review-img">
+        <h3>Anjali Verma</h3>
+        <p>“I wanted my Goa trip edited into a cinematic video. EditSphere made it look like a music video!🔥”</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
       </div>
-      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://i.pravatar.cc/100?img=32" class="review-img">
-        <h3>Aryan Mehta</h3>
-        <p>🎥 “I gave raw footage and got a YouTube-ready video in 2 days. Loved it!”</p>
+      <div class="review-card">
+        <img src="https://i.ibb.co/zQX5cGZ/indian-boy.jpg" class="review-img">
+        <h3>Rohit Sinha</h3>
+        <p>“My vlog went from plain to pro. Fast delivery and cool effects. Recommend to all YouTubers.”</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
       </div>
-      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://i.pravatar.cc/100?img=12" class="review-img">
-        <h3>Simran Gill</h3>
-        <p>📱 “Perfect edit for my birthday reel! Super fast and affordable.”</p>
+      <div class="review-card">
+        <img src="https://i.ibb.co/s5RRpnJ/indian-lady.jpg" class="review-img">
+        <h3>Priya Malhotra</h3>
+        <p>“They edited my wedding reel beautifully. I was literally emotional watching it.”</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
       </div>
     </div>
+  </section>
+
+  <section class="policy">
+    <h2>Terms & Conditions</h2>
+    <p>
+      EditSphere reserves the right to reject any inappropriate content. All content submitted must be owned by the client. Delivery time is typically 1–3 working days based on complexity. Refunds are not issued after work is completed. Pricing is subject to change. Client agrees to allow EditSphere to use final edits for portfolio or promotional purposes unless otherwise requested.
+    </p>
   </section>
 
   <!-- AOS Script -->
