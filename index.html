@@ -1,221 +1,172 @@
-<!-- ✨ EditSphere: Premium Video Editing Website ✨ -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EditSphere - Pro Video Edits</title>
+ import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion, useAnimation } from "framer-motion";
+import { Check } from "lucide-react";
 
-  <!-- Fonts & AOS Animations -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+const categories = [
+  {
+    title: "Travel Edit",
+    price: "₹199 - ₹399",
+    description: "Beautifully crafted edits that capture your adventures and journeys with cinematic transitions, sound design, and storytelling.",
+  },
+  {
+    title: "Reels Edit",
+    price: "₹299 - ₹499",
+    description: "Make your Instagram Reels pop with trendy cuts, sound sync, viral effects, and seamless transitions.",
+  },
+  {
+    title: "YouTube Shorts Edit",
+    price: "₹299 - ₹499",
+    description: "Engaging, punchy edits perfect for short-form YouTube content with sharp attention retention techniques.",
+  },
+  {
+    title: "YouTube Longform Edit",
+    price: "₹899 - ₹1299",
+    description: "Full-length professional YouTube videos with thumbnails, captions, storytelling structure, and brand consistency.",
+  },
+  {
+    title: "Personal Moment Edit",
+    price: "₹399 - ₹899",
+    description: "Emotionally-driven edits for birthdays, anniversaries, or any personal event captured in a heartfelt video.",
+  },
+];
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom right, #fff5f5, #ffe6f0);
-      color: #222;
-      font-size: 18px;
-    }
-    header {
-      background: linear-gradient(to right, #ff4d4d, #ff0066);
-      color: white;
-      text-align: center;
-      padding: 120px 20px 80px;
-    }
-    header h1 {
-      font-size: 72px;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 26px;
-      margin: 0 auto;
-      max-width: 800px;
-    }
+const reviews = [
+  {
+    name: "Rohan M.",
+    review: "EditSphere turned my travel vlog into a movie-like experience. Smooth process, fast delivery, and amazing quality!",
+  },
+  {
+    name: "Sneha K.",
+    review: "Loved how my reel turned out. Perfect sync with audio and exactly the vibe I wanted. Definitely using again!",
+  },
+  {
+    name: "Amit V.",
+    review: "My YouTube video looked so pro after EditSphere worked on it. Great storytelling and pacing!",
+  },
+];
 
-    .section {
-      padding: 100px 40px;
-    }
+export default function EditSphere() {
+  const controls = useAnimation();
 
-    .description {
-      text-align: center;
-      font-size: 22px;
-      max-width: 1000px;
-      margin: auto;
-      margin-top: 40px;
-      color: #333;
-    }
+  useEffect(() => {
+    controls.start({ opacity: 1, y: 0 });
+  }, [controls]);
 
-    .pricing-table h2 {
-      text-align: center;
-      font-size: 48px;
-      margin-bottom: 50px;
-    }
-    table {
-      width: 100%;
-      max-width: 1000px;
-      margin: auto;
-      border-collapse: collapse;
-      font-size: 20px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 16px;
-      text-align: center;
-    }
-    th {
-      background-color: #ff0066;
-      color: white;
-    }
+  return (
+    <div className="bg-black text-white font-sans">
+      <header className="text-center py-10 bg-gradient-to-b from-black to-gray-900">
+        <h1 className="text-6xl font-bold tracking-tight">EditSphere</h1>
+        <p className="mt-4 text-xl text-gray-300">Affordable. Professional. Stunning Video Editing Services.</p>
+        <Button className="mt-6 px-6 py-3 text-lg rounded-2xl bg-white text-black shadow-xl hover:bg-gray-200 transition">Place an Order</Button>
+      </header>
 
-    .order-btn-container {
-      text-align: center;
-      margin: 80px 0;
-    }
-    .order-btn {
-      padding: 20px 40px;
-      font-size: 24px;
-      font-weight: 600;
-      background: linear-gradient(135deg, #ff4d4d, #ff0066);
-      color: white;
-      border: none;
-      border-radius: 16px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 8px 24px rgba(255, 0, 100, 0.3);
-    }
-    .order-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 30px rgba(255, 0, 100, 0.4);
-    }
+      <section className="py-16 px-6 md:px-20">
+        <h2 className="text-4xl font-semibold mb-10 text-center">Our Editing Categories</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {categories.map((cat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255,255,255,0.2)" }}
+            >
+              <Card className="bg-gray-900 text-white rounded-2xl shadow-xl cursor-pointer transition-transform">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-semibold mb-2">{cat.title}</h3>
+                  <p className="text-gray-400 mb-4">{cat.description}</p>
+                  <p className="text-lg font-bold text-white">{cat.price}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-    .review-section h2 {
-      text-align: center;
-      font-size: 44px;
-      margin-bottom: 50px;
-    }
-    .review-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .review-card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      padding: 30px;
-      max-width: 320px;
-      text-align: center;
-    }
-    .review-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 16px;
-    }
-    .stars {
-      color: #f39c12;
-      font-size: 22px;
-      margin-top: 10px;
-    }
+      <section className="py-16 bg-gradient-to-r from-gray-900 to-black px-6 md:px-20">
+        <h2 className="text-4xl font-semibold mb-10 text-center">Why Choose EditSphere?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div whileHover={{ scale: 1.05 }} className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-xl font-semibold mb-2">Fast Turnaround</h3>
+            <p className="text-gray-400">Get your videos edited within 2-5 working days without compromising quality.</p>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-xl font-semibold mb-2">Affordable Pricing</h3>
+            <p className="text-gray-400">Top-notch quality edits at prices that suit everyone, from creators to professionals.</p>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-xl font-semibold mb-2">Tailored Experience</h3>
+            <p className="text-gray-400">Every edit is uniquely made to fit your style, purpose, and audience preferences.</p>
+          </motion.div>
+        </div>
+      </section>
 
-    .policy {
-      padding: 80px 40px;
-      background: #fff;
-      color: #444;
-    }
-    .policy h2 {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 30px;
-    }
-    .policy p {
-      max-width: 900px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
+      <section className="py-16 bg-black px-6 md:px-20">
+        <h2 className="text-4xl font-semibold mb-10 text-center">What Our Clients Say</h2>
+        <div className="space-y-8">
+          {reviews.map((review, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: i * 0.2 }}
+              className="bg-gray-800 p-6 rounded-xl shadow-md"
+            >
+              <p className="text-lg italic">“{review.review}”</p>
+              <p className="mt-2 text-sm text-gray-400">– {review.name}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-  <header>
-    <h1>EditSphere</h1>
-    <p>Welcome to EditSphere - India's Premium Video Editing Platform for creators, influencers, travellers & individuals. We turn your raw clips into cinematic art.</p>
-  </header>
+      <section className="py-16 px-6 md:px-20 bg-gradient-to-br from-black to-gray-900">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Frequently Asked Questions</h2>
+        <div className="max-w-3xl mx-auto space-y-6 text-gray-300">
+          <div>
+            <h3 className="text-xl font-semibold">How do I place an order?</h3>
+            <p>You can click the “Place an Order” button on the homepage and fill out the Google Form with your details.</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold">What type of footage should I send?</h3>
+            <p>We recommend high-quality footage in MP4 or MOV formats for best results.</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold">How long does editing take?</h3>
+            <p>Usually between 2-5 working days depending on the complexity and length of your video.</p>
+          </div>
+        </div>
+      </section>
 
-  <section class="section description">
-    <p>We specialize in editing travel vlogs, reels, YouTube videos, personal moments, weddings, and everything in between. With affordable pricing, lightning-fast delivery, and pro-level visuals — EditSphere is your all-in-one editing studio 🎬</p>
-  </section>
+      <section className="py-16 bg-black px-6 md:px-20">
+        <h2 className="text-3xl font-semibold text-center mb-8">Contact Us</h2>
+        <form className="max-w-2xl mx-auto space-y-6">
+          <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400" required />
+          <input type="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400" required />
+          <textarea placeholder="Your Message" rows={5} className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400" required></textarea>
+          <Button className="w-full px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-gray-300 transition">Send Message</Button>
+        </form>
+      </section>
 
-  <section class="section pricing-table">
-    <h2>Pricing Table</h2>
-    <table>
-      <tr>
-        <th>Category</th>
-        <th>Price (INR)</th>
-      </tr>
-      <tr>
-        <td>Travel Edit</td>
-        <td>₹199 - ₹399</td>
-      </tr>
-      <tr>
-        <td>Reel Edit</td>
-        <td>₹299 - ₹499</td>
-      </tr>
-      <tr>
-        <td>YouTube Long Form</td>
-        <td>₹599 - ₹999</td>
-      </tr>
-      <tr>
-        <td>Personal Edit</td>
-        <td>₹299 - ₹599</td>
-      </tr>
-    </table>
-  </section>
+      <section className="py-16 px-6 md:px-20 bg-gradient-to-br from-black to-gray-900">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Terms & Policies</h2>
+        <ul className="space-y-4 text-gray-400 text-sm max-w-3xl mx-auto">
+          <li><Check className="inline mr-2 text-green-400" />Turnaround Time: 2-5 working days depending on project type.</li>
+          <li><Check className="inline mr-2 text-green-400" />Revisions: Up to 2 free revisions per edit.</li>
+          <li><Check className="inline mr-2 text-green-400" />Refund Policy: Full refund within 24 hours of order if no work has started.</li>
+          <li><Check className="inline mr-2 text-green-400" />Client Responsibility: Ensure footage is high-quality and properly transferred.</li>
+          <li><Check className="inline mr-2 text-green-400" />Privacy: We do not share your footage or final video publicly unless you permit.</li>
+        </ul>
+      </section>
 
-  <div class="order-btn-container">
-    <a href="https://forms.gle/Zr1tDXNMCiKjskBXA" target="_blank">
-      <button class="order-btn">📥 Place Your Order</button>
-    </a>
-  </div>
-
-  <section class="section review-section">
-    <h2>Client Testimonials</h2>
-    <div class="review-grid">
-      <div class="review-card">
-        <img src="https://i.ibb.co/K59jbtd/indian-girl.jpg" class="review-img">
-        <h3>Anjali Verma</h3>
-        <p>“I got my travel video edited within a day, and it looked like a professional documentary! EditSphere nailed it.”</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="review-card">
-        <img src="https://i.ibb.co/zQX5cGZ/indian-boy.jpg" class="review-img">
-        <h3>Rohit Yadav</h3>
-        <p>“My YouTube long-form video turned out like a movie trailer. They even added subtitles & transitions. Highly recommended!”</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="review-card">
-        <img src="https://i.ibb.co/s5RRpnJ/indian-lady.jpg" class="review-img">
-        <h3>Priya</h3>
-        <p>“I wanted my anniversary video edited emotionally. They added the perfect music and slow-mos. Loved it ❤️”</p>
-        <div class="stars">⭐⭐⭐⭐</div>
-      </div>
+      <footer className="bg-gray-900 text-gray-400 text-center py-10 mt-10">
+        <p className="text-sm">© 2025 EditSphere. All rights reserved.</p>
+        <p className="text-sm">Designed for creators, brands, and storytellers worldwide.</p>
+        <p className="text-sm mt-2">
+          🚀 Built by <a href="https://yashomg.com" className="text-white underline hover:text-blue-400 transition">Aayush Singh</a>
+        </p>
+      </footer>
     </div>
-  </section>
-
-  <section class="section policy">
-    <h2>Terms & Conditions</h2>
-    <p>
-      By placing an order on EditSphere, clients agree to provide original content for editing. No copyrighted or harmful content is allowed. Typical delivery is within 2–4 working days based on complexity. Once editing is completed and delivered, no refunds are provided. You grant EditSphere permission to showcase edits (unless you request otherwise). Prices may vary based on custom requirements. Contact us for bulk or brand-based editing deals.
-    </p>
-  </section>
-
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, once: true });</script>
-</body>
-</html>
+  );
+}
